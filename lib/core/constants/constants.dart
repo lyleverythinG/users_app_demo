@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Constants {
+  // Texts
+  static const String usersAppDemoTxt = 'Users App Demo';
+
   // Colors
   static const Color kWhite = Colors.white;
   static const Color kBlack87 = Colors.black87;
