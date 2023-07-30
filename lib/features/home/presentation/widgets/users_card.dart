@@ -3,7 +3,14 @@ import 'package:users_app_demo/core/constants/constants.dart';
 import 'package:users_app_demo/core/reusable_widgets/custom_text.dart';
 
 class UsersCard extends StatelessWidget {
-  const UsersCard({super.key});
+  final String id;
+  final String name;
+  final String imageUrl;
+  const UsersCard(
+      {super.key,
+      required this.id,
+      required this.name,
+      required this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
@@ -23,26 +30,25 @@ class UsersCard extends StatelessWidget {
               Container(
                 height: 100,
                 width: 100,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: NetworkImage(
-                        'https://www.alchinlong.com/wp-content/uploads/2015/09/sample-profile.png'),
+                    image: NetworkImage(imageUrl),
                     fit: BoxFit.cover,
                   ),
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.all(8.0),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CustomText(
-                      text: 'test name',
+                      text: 'id: $id',
                     ),
                     Constants.gapH4,
                     CustomText(
-                      text: 'id: 1',
+                      text: 'Name: $name',
                     ),
                     Constants.gapH8,
                   ],
