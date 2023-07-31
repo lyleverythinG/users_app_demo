@@ -14,7 +14,6 @@ class UsersCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: use real data later for implementation.
     return Card(
       margin: const EdgeInsets.only(bottom: 15),
       shape: RoundedRectangleBorder(

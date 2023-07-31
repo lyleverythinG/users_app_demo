@@ -24,11 +24,9 @@ class DisplayUsers extends StatelessWidget {
             return Expanded(
               child: ListView.builder(
                 physics: const BouncingScrollPhysics(),
-                // TODO: update this later for functionality implementation.
                 itemCount: state.users.length,
                 itemBuilder: ((context, index) {
                   return GestureDetector(
-                    // TODO: Add navigation going to user details screen
                     onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(
