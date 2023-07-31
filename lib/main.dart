@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:http/http.dart';
 import 'package:users_app_demo/core/constants/constants.dart';
 import 'package:users_app_demo/features/home/data/repository/users_repo.dart';
 import 'package:users_app_demo/features/home/presentation/bloc/bloc/users_bloc.dart';
@@ -19,7 +20,7 @@ class UsersAppDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RepositoryProvider(
-      create: (context) => UsersRepo(),
+      create: (context) => UsersRepo(httpClient: Client()),
       child: BlocProvider(
         create: (context) =>
             UsersBloc(usersRepo: RepositoryProvider.of<UsersRepo>(context)),
