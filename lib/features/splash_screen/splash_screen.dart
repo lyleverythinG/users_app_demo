@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:users_app_demo/features/home/presentation/pages/users_home_page.dart';
+import 'package:users_app_demo/features/home/presentation/pages/users_home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   static const String route = 'splash';

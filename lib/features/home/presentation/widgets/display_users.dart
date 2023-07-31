@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:users_app_demo/core/reusable_widgets/loading.dart';
 import 'package:users_app_demo/features/home/presentation/bloc/bloc/users_bloc.dart';
+import 'package:users_app_demo/features/home/presentation/pages/users_info_screen.dart';
 import 'package:users_app_demo/features/home/presentation/widgets/empty_users_text.dart';
 import 'package:users_app_demo/features/home/presentation/widgets/users_card.dart';
 
@@ -28,7 +29,16 @@ class DisplayUsers extends StatelessWidget {
                 itemBuilder: ((context, index) {
                   return GestureDetector(
                     // TODO: Add navigation going to user details screen
-                    onTap: () {},
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => UsersInfoScreen(
+                          id: state.users[index].id,
+                          name: state.users[index].name,
+                          imageUrl: state.users[index].imageUrl,
+                        ),
+                      ),
+                    ),
                     child: UsersCard(
                         id: state.users[index].id,
                         imageUrl: state.users[index].imageUrl,
